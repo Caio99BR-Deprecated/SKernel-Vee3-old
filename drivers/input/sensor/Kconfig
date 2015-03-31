@@ -1,0 +1,80 @@
+#
+# Sensor driver configuration
+#
+menuconfig INPUT_SENSOR
+	bool "Sensors"
+	help
+	  Say Y here, and a list of supported touchscreens will be displayed.
+	  This option doesn't affect the kernel.
+
+	  If unsure, say Y.
+
+if INPUT_SENSOR
+
+config SENSOR_GP2AP
+	tristate "GP2AP based proximity sensor"
+	help
+	  Say Y here if you have a sensor interface using the
+	  GP2AP controller, and your board-specific
+	  setup code includes i2c devices.
+
+	  If unsure, say N (but it's safe to say "Y").
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called ads7846.
+
+config SENSORS_BMA250
+	tristate "BMA250 Acceleration Sensor Driver"
+	depends on I2C
+	help
+	 BMA250 Acceleration Sensor Driver implemented by Bosch-Sensortec.
+
+#LGE_CHANGE : 2012-10-24 Sanghun,Lee(eee3114.@lge.com) sensor change from bmc150 to bmc050
+config SENSORS_BMA2X2
+	tristate "BMA255/BMA250E/BMA222E/BMA280 acceleration sensor support"
+	depends on I2C=y
+	help
+	  If you say yes here you get support for Bosch Sensortec's 
+	  acceleration sensors BMA255/BMA250E/BMA222E/BMA280.
+#LGE_CHANGE : 2012-10-24 Sanghun,Lee(eee3114.@lge.com) sensor change from bmc150 to bmc050
+
+config SENSORS_BMM050
+	tristate "BMM050 Magnetic Sensor Driver"
+	depends on I2C
+	help
+	 BMM050 Magnetic Sensor Driver implemented by Bosch-Sensortec.	  
+
+config SENSOR_APDS9190
+	tristate "APDS based proximity sensor"
+	help
+	  Say Y here if you have a sensor interface using the
+	  APDS controller, and your board-specific
+	  setup code includes i2c devices.
+
+	  If unsure, say N (but it's safe to say "Y").
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called apds9190.
+
+#LGE_CHANGE : 2013-02-04 jinseok.choi@lge.com V1 uses Rohm RPR0400 for Proximity Sensor
+config SENSOR_RPR0400
+	tristate "RPR0400 based proximity sensor"
+	help
+	  Say Y here if you have a sensor interface using the
+	  RPR0400 controller, and your board-specific
+	  setup code includes i2c devices.
+
+	  If unsure, say N (but it's safe to say "Y").
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called rpr0400.
+
+#[LGSI_SP4_BSP_BEGIN][kirankumar.vm@lge.com] Avago Proximity Changes
+config SENSOR_APDS9130
+       tristate "APDS9130 Proximity Sensor Driver"
+       depends on I2C
+       help
+        APDS9130 Proximity Sensor Driver implemented by Avago Tech.
+#[LGSI_SP4_BSP_END][kirankumar.vm@lge.com] Avago Proximity Changes
+
+endif

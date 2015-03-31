@@ -1,0 +1,30 @@
+menuconfig SWITCH
+	tristate "Switch class support"
+	help
+	  Say Y here to enable switch class support. This allows
+	  monitoring switches by userspace via sysfs and uevent.
+
+if SWITCH
+
+config SWITCH_GPIO
+	tristate "GPIO Swith support"
+	depends on GENERIC_GPIO
+	help
+	  Say Y here to enable GPIO based switch support.
+
+# LGE_UPDATE_S	: jaz.john@lge.com  20120421
+# headset detect switch
+config LGE_SWITCH_GPIO
+	bool "LGE GPIO Swith support"
+	depends on GENERIC_GPIO
+	help
+	  Say Y here to enable LGE GPIO based switch support.
+# LGE_UPDATE_E		20120421	
+
+config LGE_HEADSET_DETECTION_FSA8008
+    tristate "FSA8008 Headset Switch"
+	help
+	  Say Y here to enable LGE headset detector ic.
+
+
+endif # SWITCH

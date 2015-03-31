@@ -1,0 +1,55 @@
+config MACH_MSM7X25A_V3
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3"
+    help
+        Support for the LG Electronics MSM7x25AB V3.
+
+config MACH_MSM7X25A_V3_DS
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3 DS"
+    help
+        Support for the LG Electronics MSM7x25AB V3 DualSim.
+
+config MACH_MSM7X25A_V3_EU
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3 EU"
+    help
+        Support for the LG Electronics MSM7x25AB V3 EU.
+
+config MACH_MSM7X25A_V3EU_REV_11
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3 EU Rev.11"
+    help
+        Support for the LG Electronics MSM7x25AB V3 EU Final Revision.
+
+config MACH_MSM7X25A_V3EU_REV_11_LED
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3 EU Rev.11 LED"
+    help
+        Support for the LG Electronics MSM7x25AB V3 EU LED Final Revision.
+        
+config MACH_MSM7X25A_V3BR_REV_11
+    depends on ARCH_MSM7X27A
+    depends on !MSM_STACKED_MEMORY
+    select MACH_LGE
+    bool "MSM7x25A V3 BR Rev.11"
+    help
+        Support for the LG Electronics MSM7x25AB V3 BR Final Revision.
+        
+config LGE_BATTERY_SUSPEND_RESUME
+    depends on ARCH_MSM7X27A
+    select MACH_LGE
+    bool "MSM7x25A V3 Battery Suspend"
+    help
+        Support for the LG Electronics Power.
+
