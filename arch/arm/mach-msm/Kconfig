@@ -1564,7 +1564,7 @@ config MSM_CPU_FREQ_SET_MIN_MAX
 config MSM_CPU_FREQ_MAX
 	int "Max CPU Frequency"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
-	default 384000
+	default 800000
 
 config MSM_CPU_FREQ_MIN
 	int "Min CPU Frequency"
@@ -1574,10 +1574,17 @@ config MSM_CPU_FREQ_MIN
 config MSM7X27A_OVERCLOCK
 	bool "Enable SoC overclocking for MSM7x27A"
 	depends on MSM_CPU_FREQ_SET_MIN_MAX
-        depends on ARCH_MSM7X27A
+	depends on ARCH_MSM7X27A
 	default n
 	help
-	  Enable support for non-standard msm7x27A acpuclock frequencies/voltages.
+	  Enable support for non-standard msm7x27A acpuclock frequencies.
+
+config MSM7X27A_UNDERVOLT
+	bool "Enable SoC undervolting for MSM7x27A"
+	depends on ARCH_MSM7X27A
+	default n
+	help
+	  Enable support for non-standard msm7x27A acpuclock voltages.
 
 endif # CPU_FREQ_MSM
 

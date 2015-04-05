@@ -1,8 +1,7 @@
-ui_print("");
-ui_print("TeamVee");
-ui_print("");
-ui_print("Presents");
-ui_print("VeeKernel");
+ui_print("TeamVee Presents");
+ui_print("SKernel");
+ui_print("Vee3 Edition");
+ui_print("L3 II Single");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p14", "/system");
 ui_print("Updating modules!");
 package_extract_dir("system", "/system");
