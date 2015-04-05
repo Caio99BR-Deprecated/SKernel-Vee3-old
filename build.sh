@@ -28,7 +28,7 @@ cd $location
 
 echo ""
 echo "Script says: Choose the place of the toolchain"; sleep 2
-echo "Caio99BR says: 1) GCC 4.6 Toolchain, 2) GCC 4.7 Toolchain or any key to Choose the place"
+echo "Caio99BR says: 1) Google GCC 4.6 | 2) Google GCC 4.7 | or any key to Choose the place"
 read -p "Choice: " toolchain
 case "$toolchain" in
 	1 ) export CROSS_COMPILE="../arm-eabi-4.6/bin/arm-eabi-"; echo "../arm-eabi-4.6/bin/arm-eabi-";;
@@ -43,13 +43,14 @@ esac
 echo ""
 read -p "Script says: Enter any key for "Clean" or N for "Continue": " clean
 case $clean in
-	*) echo "Script says: Cleaning..."; make clean mrproper;;
+	*) echo "Script says: Cleaning..."; echo ""; make clean mrproper;;
 	n|N) echo "Script says: Continuing...";;
 esac
 
-clear
+echo ""
 echo "Script says: Now, building the Kernel!"; sleep 2
-echo "$custom_kernel for $target $version Edition!"; sleep 3
+echo "$custom_kernel for $target $version Edition!"
+echo ""; sleep 3
 
 START=$(date +%s)
 
