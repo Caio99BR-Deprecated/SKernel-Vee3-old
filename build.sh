@@ -28,13 +28,16 @@ cd $location
 
 echo ""
 echo "Script says: Choose the place of the toolchain"; sleep 2
-echo "Caio99BR says: 1) Google GCC 4.4.3 | 2) Linaro GCC 4.6.2 | 3) Google GCC 4.7 | 4) Google GCC 4.8 or any key to Choose the place"
+echo "Google GCC - 1) 4.4.3 | 2) 4.7 | 3) 4.8"
+echo "Linaro GCC - 4) 4.6.2 | 5) 4.7.4"
+echo "or any key to Choose the place"
 read -p "Choice: " toolchain
 case "$toolchain" in
 	1 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-4.4.3/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-4.4.3/bin/arm-eabi-";;
-	2 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-";;
-	3 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-4.7/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-4.7/bin/arm-eabi-";;
-	4 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-4.8/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-4.8/bin/arm-eabi-";;
+	2 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-4.7/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-4.7/bin/arm-eabi-";;
+	3 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-4.8/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-4.8/bin/arm-eabi-";;
+	4 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-"; echo "../android_prebuilt_toolchains/arm-eabi-linaro-4.6.2/bin/arm-eabi-";;
+	5 ) export CROSS_COMPILE="../android_prebuilt_toolchains/arm-unknown-linux-gnueabi-linaro_4.7.4-2013.12/bin/arm-unknown-linux-gnueabi-"; echo "../android_prebuilt_toolchains/arm-unknown-linux-gnueabi-linaro_4.7.4-2013.12/bin/arm-unknown-linux-gnueabi-";;
 	* ) echo "Script says: Please specify a location"; sleep 1;
 		echo "Script says: and the prefix of the chosen toolchain at the end"; sleep 1
 		echo ""
