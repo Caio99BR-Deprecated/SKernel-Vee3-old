@@ -2548,7 +2548,6 @@ static struct module *setup_load_info(struct load_info *info)
 static int check_modinfo(struct module *mod, struct load_info *info)
 {
 	const char *modmagic = get_modinfo(info, "vermagic");
-        const char *wlan_modmagic = "3.4.0-perf-g22f2f4c preempt mod_unload modversions ARMv7 ";
 	int err;
 
 	/* This is allowed: modprobe --force will invalidate it. */
@@ -2557,11 +2556,9 @@ static int check_modinfo(struct module *mod, struct load_info *info)
 		if (err)
 			return err;
 	} else if (!same_magic(modmagic, vermagic, info->index.vers)) {
-		if (!same_magic(modmagic, wlan_modmagic, info->index.vers)) {
-		    printk(KERN_ERR "%s: version magic '%s' should be '%s'\n",
-		           mod->name, modmagic, vermagic);
-		    return -ENOEXEC;
-		}
+		printk(KERN_ERR "%s: version magic '%s' should be '%s'\n",
+		       mod->name, modmagic, vermagic);
+		return -ENOEXEC;
 	}
 
 	if (!get_modinfo(info, "intree"))
