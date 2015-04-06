@@ -10,7 +10,7 @@ echo "Caio99BR says: I did it!"; sleep 2
 
 location=.
 custom_kernel=SKernel
-version=Alpha
+version=v0.2
 
 if [ -z $target ]; then
 	echo ""
